@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign-Up Page</title>
+    <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <form action="index.html">
+    <div id="container" class="container">
+        <div class="row">
+            <div class="col">
+                <div class="form-wrapper">
+                    <div class="form sign-up">
+                        <div class="input-group">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <input type="text" id="Username" name="Username" placeholder="Username">
+                        </div>
+                        <div class="input-group">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <input type="email" id="Email" name="Email" placeholder="Email">
+                        </div>
+                        <div class="input-group">
+                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                            <input type="password" id="Password" name="Password" placeholder="Password">
+                        </div>
+                        <div class="input-group">
+                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                            <input type="password" id="Confirm password" name="Confirm Password" placeholder="Confirm Password">
+                        </div>
+                        <button> Sign up </button>
+                        <p>
+                            <span> Already have an account? </span>
+                            <b onclick="toggle()" class="pointer"> Sign in here </b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="form-wrapper">
+                    <div class="form sign-in">
+                        <div class="input-group">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <input type="text" id="username" name="username" placeholder="Username">
+                        </div>
+                        <div class="input-group">
+                            <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                            <input type="password" id="password" name="password" placeholder="Password">
+                        </div>
+                        <button> Sign in </button>
+                        <p>
+                            <span> Don't have an account? </span>
+                            <b onclick="toggle()" class="pointer"> Sign up here </b>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row content-row">
+            <div class="col">
+                <div class="text sign-in">
+                    <h2> Welcome To HealthMate </h2>
+                </div>
+                <div class="img sign-in">
+                </div>
+            </div>
+            <div class="col">
+                <div class="img sign-up">
+                </div>
+                <div class="text sign-up">
+                    <h2> Register Here </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    let container = document.getElementById('container')
+    toggle = () => {
+	container.classList.toggle('sign-in')
+	container.classList.toggle('sign-up')
+}
+setTimeout(() => {
+	container.classList.add('sign-in')
+}, 200)
+    </script>
+    </form>
+</body>
+</html>
