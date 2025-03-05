@@ -223,6 +223,73 @@ body {
   color: #3498db;
 }
 
+/* Testimonials Section */
+.testimonials {
+  padding: 100px 0;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.testimonials h2 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: #ff6f61;
+}
+
+.testimonial-cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.testimonial-card {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.testimonial-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.testimonial-card p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* Responsive Design for Testimonials */
+@media screen and (max-width: 768px) {
+  .testimonial-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial-card {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+}
+
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .hero {
