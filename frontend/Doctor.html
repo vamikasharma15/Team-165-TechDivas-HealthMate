@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Consultation - Health Mate</title>
+  <link rel="stylesheet" href="Doctor.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar Section -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="Logo.png" alt="Health Mate Logo" class="logo-img">
+        <span>Health Mate</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About Us</a></li>
+        <li class="dropdown">
+          <a href="#">Health Monitor</a>
+          <div class="dropdown-content">
+            <a href="Track.html">Period Tracker</a>
+            <a href="Health.html">Health Insights</a>
+          </div>
+        </li>
+        <li><a href="Doctor.html">Consult a Doctor</a></li>
+        <li class="dropdown">
+          <a href="#">Wellness Guide</a>
+          <div class="dropdown-content">
+            <a href="Remedies.html">Home Remedies</a>
+            <a href="Yoga.html">Yoga Poses</a>
+            <a href="Exercises.html">Exercises</a>
+          </div>
+        </li>
+        <li><a href="Help.html">Help & Support</a></li>
+        <li><a href="Login.html">Login/Signup</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Doctor Consultation Content -->
+  <header>
+    <div class="header-content">
+      <h1>Doctor Consultation</h1>
+      <p>Expert advice for menstrual health and PCOD management</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="consultation-form">
+      <h2>Book Your Consultation</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Enter your phone number" required>
+        </div>
+        <div class="form-group">
+          <label for="issue">Describe Your Issue</label>
+          <textarea id="issue" rows="5" placeholder="Briefly describe your menstrual or PCOD-related issue" required></textarea>
+        </div>
+        <button type="submit">Book Now</button>
+      </form>
+    </section>
+
+    <section class="doctor-info">
+      <h2>Our Specialists</h2>
+      <div class="doctor-cards">
+        <div class="doctor-card">
+          <img src="https://via.placeholder.com/150" alt="Doctor Image">
+          <h3>Dr. Priya Sharma</h3>
+          <p>Gynecologist | 10+ years of experience</p>
+          <p>Specializes in menstrual disorders and PCOD management.</p>
+        </div>
+        <div class="doctor-card">
+          <img src="https://via.placeholder.com/150" alt="Doctor Image">
+          <h3>Dr. Anjali Mehta</h3>
+          <p>Endocrinologist | 8+ years of experience</p>
+          <p>Expert in hormonal imbalances and PCOD treatment.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 Health Mate. All rights reserved.</p>
+  </footer>
+</body>
+</html>
