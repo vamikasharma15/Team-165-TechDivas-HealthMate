@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symptom Tracker - HealthMate</title>
+  <link rel="stylesheet" href="Health.css"> <!-- Link your CSS file -->
+</head>
+<body>
+
+  <div class="container">
+    <section class="symptom-tracker">
+      <h2>Symptom Tracker</h2>
+      <p>Track your symptoms and monitor your health over time.</p>
+
+      <!-- Symptom Tracking Form -->
+      <form id="symptomForm" class="tracker-form">
+        <label for="symptom">Select Symptom:</label>
+        <select id="symptom" name="symptom" required>
+          <option value="">--Choose a Symptom--</option>
+          <option value="Headache">Headache</option>
+          <option value="Fatigue">Fatigue</option>
+          <option value="Cramps">Cramps</option>
+          <option value="Nausea">Nausea</option>
+          <option value="Mood Swings">Mood Swings</option>
+          <option value="Bloating">Bloating</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit">Add Symptom</button>
+      </form>
+
+      <!-- List of Tracked Symptoms -->
+      <div class="tracked-symptoms">
+        <h3>Tracked Symptoms</h3>
+        <ul id="symptomList" class="symptom-list"></ul>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    document.getElementById("symptomForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const symptom = document.getElementById("symptom").value;
+      const date = document.getElementById("date").value;
+
+      if (!symptom || !date) return;
+
+      // Create a list item
+      const li = document.createElement("li");
+      li.textContent = ${symptom} - ${date};
+
+      // Add Remove Button
+      const removeBtn = document.createElement("button");
+      removeBtn.textContent = "Remove";
+      removeBtn.classList.add("remove-btn");
+      removeBtn.onclick = function() {
+        li.remove();
+      };
+
+      li.appendChild(removeBtn);
+
+      // Append to the symptom list
+      document.getElementById("symptomList").appendChild(li);
+
+      // Reset form
+      document.getElementById("symptomForm").reset();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help & Support - HealthMate</title>
+  <link rel="stylesheet" href="Help.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="Logo.png" alt="Health Mate Logo" class="logo-img">
+        <span>Health Mate</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="About.html">About Us</a></li>
+        <li class="dropdown">
+          <a href="#">Health Monitor</a>
+          <div class="dropdown-content">
+            <a href="Track.html">Period Tracker</a>
+            <a href="Health.html">Health Insights</a>
+          </div>
+        </li>
+        <li><a href="Doctor.html">Consult a Doctor</a></li>
+        <li class="dropdown">
+          <a href="#">Wellness Guide</a>
+          <div class="dropdown-content">
+            <a href="Remedies.html">Home Remedies</a>
+            <a href="Yoga.html">Yoga Poses</a>
+            <a href="Exercises.html">Exercises</a>
+          </div>
+        </li>
+        <li><a href="Help.html">Help & Support</a></li>
+        <li><a href="Login.html">Login/Signup</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Help & Support Section -->
+  <section class="help-section">
+    <div class="container">
+      <h1>Help & Support</h1>
+      <p class="subtitle">We're here to help you!</p>
+
+      <!-- FAQ Section -->
+      <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq">
+          <div class="faq-item">
+            <button class="faq-question">How do I track my period?</button>
+            <div class="faq-answer">
+              <p>You can track your period by logging your start and end dates in the Period Tracker section. The app will predict your next period based on your cycle length.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">How do I reset my password?</button>
+            <div class="faq-answer">
+              <p>Go to the Login page and click on "Forgot Password." Enter your email address, and we'll send you a link to reset your password.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Can I consult a doctor online?</button>
+            <div class="faq-answer">
+              <p>Yes, you can consult a doctor online through the "Consult a Doctor" section. Simply book an appointment and connect with a certified healthcare professional.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">How do I contact customer support?</button>
+            <div class="faq-answer">
+              <p>You can contact us via the contact form below or use the live chat option for immediate assistance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-section">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+      <!-- Live Chat -->
+      <div class="live-chat">
+        <h2>Live Chat</h2>
+        <p>Need immediate help? Chat with us now!</p>
+        <button id="liveChatButton"><i class="fas fa-comments"></i> Start Live Chat</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>HealthMate</h3>
+          <p>Your personal health companion for a better tomorrow.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 HealthMate. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ Toggle
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        answer.classList.toggle('active');
+      });
+    });
+
+    // Live Chat Button
+    const liveChatButton = document.getElementById('liveChatButton');
+    liveChatButton.addEventListener('click', () => {
+      alert("Live chat is not available at the moment. Please try again later.");
+    });
+
+    // Contact Form Submission
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert("Thank you for contacting us! We'll get back to you soon.");
+      event.target.reset();
+    });
+  </script>
+</body>
+</html>
