@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Period Tracker - Healthmate</title>
+  <link rel="stylesheet" href="Track.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Next Period Prediction Form -->
+    <h1><i class="fas fa-calendar-alt"></i> Period Tracker</h1>
+    <form id="predictionForm">
+      <label for="lastPeriodDate"><i class="fas fa-calendar-day"></i> Last Period Date:</label>
+      <input type="date" id="lastPeriodDate" name="lastPeriodDate" required>
+      
+      <label for="cycleLength"><i class="fas fa-arrows-alt-h"></i> Average Cycle Length (in days):</label>
+      <input type="number" id="cycleLength" name="cycleLength" min="21" max="35" required>
+      
+      <button type="submit"><i class="fas fa-calculator"></i> Calculate Next Period</button>
+    </form>
+    <div id="result"></div>
+
+    <!-- Period Tracker Section -->
+    <div class="tracker">
+      <!-- Calendar Section -->
+      <div class="calendar">
+        <h2>Cycle Calendar</h2>
+        <div id="calendar"></div>
+      </div>
+
+      <!-- Log Section -->
+      <div class="log">
+        <h2>Log Your Period</h2>
+        <form id="periodForm">
+          <label for="startDate">Start Date:</label>
+          <input type="date" id="startDate" required>
+
+          <label for="endDate">End Date:</label>
+          <input type="date" id="endDate" required>
+
+          <label for="flow">Flow Intensity:</label>
+          <select id="flow" required>
+            <option value="light">Light</option>
+            <option value="medium">Medium</option>
+            <option value="heavy">Heavy</option>
+          </select>
+
+          <label for="symptoms">Symptoms:</label>
+          <div class="symptoms">
+            <label><input type="checkbox" name="symptoms" value="cramps"> Cramps</label>
+            <label><input type="checkbox" name="symptoms" value="bloating"> Bloating</label>
+            <label><input type="checkbox" name="symptoms" value="headache"> Headache</label>
+            <label><input type="checkbox" name="symptoms" value="mood swings"> Mood Swings</label>
+          </div>
+
+          <label for="mood">Mood:</label>
+          <select id="mood" required>
+            <option value="happy">😊 Happy</option>
+            <option value="neutral">😐 Neutral</option>
+            <option value="sad">😢 Sad</option>
+            <option value="angry">😠 Angry</option>
+          </select>
+
+          <button type="submit">Log Period</button>
+        </form>
+      </div>
+
+      <!-- History Section -->
+      <div class="history">
+        <h2>Cycle History</h2>
+        <ul id="historyList"></ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Next Period Prediction Form
+    document.getElementById('predictionForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get form values
+      const lastPeriodDate = new Date(document.getElementById('lastPeriodDate').value);
+      const cycleLength = parseInt(document.getElementById('cycleLength').value);
+
+      // Calculate next period date
+      const nextPeriodDate = new Date(lastPeriodDate);
+      nextPeriodDate.setDate(lastPeriodDate.getDate() + cycleLength);
+
+      // Display prediction result
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = `Your next period is predicted to start on: <strong>${nextPeriodDate.toDateString()}</strong>`;
+    });
+
+    // Period Log Form
+    let periodHistory = [];
+    document.getElementById('periodForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Get form values
+      const startDate = document.getElementById('startDate').value;
+      const endDate = document.getElementById('endDate').value;
+      const flow = document.getElementById('flow').value;
+      const mood = document.getElementById('mood').value;
+      const symptoms = Array.from(document.querySelectorAll('input[name="symptoms"]:checked')).map(el => el.value);
+
+      // Create log entry
+      const logEntry = {
+        startDate,
+        endDate,
+        flow,
+        mood,
+        symptoms,
+      };
+
+      // Add to history
+      periodHistory.push(logEntry);
+      updateHistory();
+
+      // Clear form
+      event.target.reset();
+    });
+
+    // Function to update cycle history
+    function updateHistory() {
+      const historyList = document.getElementById('historyList');
+      historyList.innerHTML = ''; // Clear previous entries
+
+      periodHistory.forEach((entry, index) => {
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <strong>Cycle ${index + 1}:</strong>
+          ${entry.startDate} to ${entry.endDate} |
+          Flow: ${entry.flow} |
+          Mood: ${entry.mood} |
+          Symptoms: ${entry.symptoms.join(', ')}
+        `;
+        historyList.appendChild(li);
+      });
+    }
+
+    // Simple calendar generator (static for demo)
+    const calendar = document.getElementById('calendar');
+    for (let i = 1; i <= 31; i++) {
+      const day = document.createElement('div');
+      day.textContent = i;
+      calendar.appendChild(day);
+    }
+  </script>
+</body>
+</html>
