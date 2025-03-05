@@ -29,7 +29,7 @@ body {
   
   /* Navbar Styles */
   .navbar {
-    background: rgba(255, 182, 193, 0.9); /* Light pink with transparency */
+    background:  rgb(177, 126, 126); /* Light pink with transparency */
     padding: 15px 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px); /* Glass morphism effect */
