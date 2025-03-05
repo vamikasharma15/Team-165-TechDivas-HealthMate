@@ -1,0 +1,121 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  /* Container */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Symptom Tracker Section */
+  .symptom-tracker {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+  }
+  
+  .symptom-tracker h2 {
+    text-align: center;
+    color: #ff6f61;
+  }
+  
+  /* Form */
+  .tracker-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .tracker-form label {
+    font-weight: bold;
+  }
+  
+  .tracker-form select,
+  .tracker-form input,
+  .tracker-form button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .tracker-form button {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s ease;
+  }
+  
+  .tracker-form button:hover {
+    background-color: #ff4a3d;
+  }
+  
+  /* Tracked Symptoms List */
+  .tracked-symptoms {
+    margin-top: 20px;
+  }
+  
+  .tracked-symptoms h3 {
+    color: #ff6f61;
+  }
+  
+  .symptom-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .symptom-list li {
+    background: #fff;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .symptom-list .remove-btn {
+    background: #ff6f61;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .symptom-list .remove-btn:hover {
+    background: #ff4a3d;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      width: 95%;
+    }
+  
+    .tracker-form {
+      flex-direction: column;
+    }
+  
+    .symptom-list li {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .symptom-list .remove-btn {
+      margin-top: 5px;
+    }
+  }
